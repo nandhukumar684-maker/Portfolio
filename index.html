@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Venkat — Video Editor</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -20,6 +21,7 @@
     --sticker-ai:#0E9C8F;
     --panel-dark:#15130F;
   }
+
 
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
@@ -466,7 +468,7 @@
     aspect-ratio: 9/12;
     background:#000;
   }
-  .work-thumb img{ width:100%; height:100%; object-fit:cover; }
+  .work-thumb img{ width:100%; height:70%; object-fit:cover; }
   .work-tag{
     position:absolute; top:8px; left:8px;
     font-family:'Space Mono', monospace;
@@ -501,7 +503,7 @@
     line-height:1.15;
   }
   .work-info .d{
-    font-size:12px;
+    font-size:10px;
     opacity:0.65;
     margin-top:3px;
   }
@@ -1400,6 +1402,33 @@ footer{
   transform:translateY(-2px);
 }
 
+
+
+
+
+
+/* ---- EQUAL HEIGHT FIX + 3D SETUP ---- */
+.work-grid{
+  grid-template-columns: 1fr 1fr;   /* 2 per row, 3 rows for 6 cards */
+  align-items: stretch;             /* ella cards-um same row height */
+}
+.work-card{
+  display: flex;
+  flex-direction: column;
+  height: 100%;                     /* row-oda full height eduthukkum */
+  perspective: 1400px;
+}
+.work-thumb{
+  aspect-ratio: 9/12;                /* video area ellam same ratio */
+}
+.work-info{
+  flex: 1;                          /* text kammiya irundhalum card same height-a nikkum */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
 </style>
 </head>
 <body>
@@ -1559,6 +1588,69 @@ footer{
 
   <div class="work-grid" id="workGrid">
 
+<!-- new -->
+
+
+<div class="work-card" data-video="./SS_C09.mp4" data-title="PKG Chappathi Corner" tabindex="0" role="button" aria-label="Play PKG Chappathi Corner video">
+      
+
+       <div class="work-thumb">
+  <video muted preload="metadata">
+    <source src="./SS_C09.mp4" type="video/mp4">
+  </video>
+
+  <span class="work-tag">ADD</span>
+  <span class="work-dur">0:48</span>
+
+  <div class="play-btn">
+    <svg viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="24" fill="rgba(255,255,255,0.85)"/>
+      <path d="M19 15l16 9-16 9V15Z" fill="#181611"/>
+    </svg>
+  </div>
+  
+</div>
+<div class="work-info">
+        <div class="t">Sig Scl</div>
+        <div class="d">Your Journey to Success Starts Here</div>
+      </div>
+    </div>
+
+
+    <div class="work-card" data-video="./Car_Demo.mp4" data-title="PKG Chappathi Corner" tabindex="0" role="button" aria-label="Play PKG Chappathi Corner video">
+      
+
+       <div class="work-thumb">
+  <video muted preload="metadata">
+    <source src="./Car_Demo.mp4" type="video/mp4">
+  </video>
+
+  <span class="work-tag">PROMO</span>
+  <span class="work-dur">0:38</span>
+
+  <div class="play-btn">
+    <svg viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="24" fill="rgba(255,255,255,0.85)"/>
+      <path d="M19 15l16 9-16 9V15Z" fill="#181611"/>
+    </svg>
+  </div>
+  
+</div>
+<div class="work-info">
+        <div class="t">RC Car Bit</div>
+        <div class="d">Speed Beyond Limits</div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
     <div class="work-card" data-video="./NETA CARE 03.mp4" data-title="Neta Care" tabindex="0" role="button" aria-label="Play Neta Care video">
       
 
@@ -1583,6 +1675,15 @@ footer{
   </div>
   
 </div>
+<!-- new -->
+
+
+
+
+
+
+
+
 <div class="work-info">
        <div class="t">Neta Care</div>
         <div class="d">Healthcare ad spot</div>
@@ -1614,16 +1715,16 @@ footer{
     </div>
     
   
-    <div class="work-card" data-video="./advadess.mp4" data-title="PKG Chappathi Corner" tabindex="0" role="button" aria-label="Play PKG Chappathi Corner video">
+    <div class="work-card" data-video="./DRV_Shop.mp4" data-title="PKG Chappathi Corner" tabindex="0" role="button" aria-label="Play PKG Chappathi Corner video">
       
 
        <div class="work-thumb">
   <video muted preload="metadata">
-    <source src="./advadess.mp4" type="video/mp4">
+    <source src="./DRV_Shop.mp4" type="video/mp4">
   </video>
 
-  <span class="work-tag">PROMO</span>
-  <span class="work-dur">0:55</span>
+  <span class="work-tag">ADD</span>
+  <span class="work-dur">0:43</span>
 
   <div class="play-btn">
     <svg viewBox="0 0 48 48">
@@ -1634,8 +1735,8 @@ footer{
   
 </div>
 <div class="work-info">
-        <div class="t">Media Junction Official</div>
-        <div class="d">Build your Brand Grow Your Business</div>
+        <div class="t">DRV Shop</div>
+        <div class="d">Every Drop Full of Freshness</div>
       </div>
     </div>
 
